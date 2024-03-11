@@ -1,0 +1,12 @@
+<div class="profile-container">
+    <div *ngIf="isLoggedIn" class="profile-header">
+        <img [src]="getProfileImage()" [alt]="username" class="profile-image">
+        <h3>{{ username }}</h3>
+        <p>{{ email }}</p>
+        <h4 *ngIf="roles.includes('ROLE_ADMIN')">Votre rôle : ADMIN</h4>
+      </div>
+    <div class="profile-body">
+      <h2>About Me</h2>
+      <p>{{ user.about }}</p>
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+<div class="main-body">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+    <span class="example-spacer" *ngIf="roles.includes('ROLE_ADMIN')">
+      <button mat-raised-button class="add-team-btn" (click)="openAddEditTeamForm()">
+        ADD Team
+      </button>
+    </span>
+    <div class="card-container">
+      <mat-card *ngFor="let team of dataSource?.filteredData" class="team-card">
+        <mat-card-header>
+          <mat-card-title>{{ team.name }}</mat-card-title>
+          <mat-card-subtitle>ID: {{ team.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="getImageUrl(team.teamImages[0])" alt="Team Photo" class="square-image">
+        <mat-card-content>
+          <p>{{ team.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <span *ngIf="roles.includes('ROLE_ADMIN')">
+            <button mat-icon-button color="primary" (click)="openEditForm(team)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteTeam(team.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+          <button mat-icon-button color="accent" [routerLink]="['/employees', team.id]">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  

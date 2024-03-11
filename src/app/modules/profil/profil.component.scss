@@ -1,0 +1,43 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .profile-header {
+    text-align: center;
+  
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #BDD248;
+      margin-bottom: 20px;
+    }
+  
+    .profile-name {
+      margin: 0;
+      font-size: 2em;
+    }
+  
+    .profile-title {
+      margin: 0;
+      font-size: 1.2em;
+      color: #757575;
+    }
+  }
+  
+  .profile-body {
+    margin-top: 30px;
+  
+    h2 {
+      margin-bottom: 15px;
+    }
+  
+    p {
+      line-height: 1.6;
+    }
+  }
+  
